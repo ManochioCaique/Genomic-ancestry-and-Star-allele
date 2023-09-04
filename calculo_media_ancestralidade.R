@@ -61,18 +61,19 @@ df <- data.frame(POP = character(),
 # Remover a coluna "POP" antes de arredondar os valores
 tabela_sem_pop <- select(tabela_resultados, -POP)
 
-# Função para arredondar os valores para 6 casas decimais
+# Funçao para arredondar os valores para 6 casas decimais
 arredondar_decimal <- function(valor) {
   round(valor, digits = 6)
 }
 
-# Aplicar a função em todas as colunas numéricas
+# Aplicar a funçao em todas as colunas numericas
 tabela_decimal <- tabela_sem_pop %>%
   mutate(across(everything(), arredondar_decimal))
 
 # Adicionar novamente a coluna "POP" à tabela decimal
 tabela_decimal <- cbind(tabela_resultados$POP, tabela_decimal)
 
+#copiando para uma tabela do excel
 media_k8 <- tabela_decimal
 install.packages("clipr")
 library(clipr)

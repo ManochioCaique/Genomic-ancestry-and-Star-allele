@@ -10,7 +10,7 @@
 #-----------------
 #
 # Original Author: Fernanda Soares
-# Contributor(s): Wagner Magalhaes, Gilderlanio Araujo, Mateus Gouveia,  Caique Manochio 
+# Contributor(s): Wagner Magalhaes, Gilderlanio Araujo, Mateus Gouveia e  Caique Manochio 
 # Updated by (and date): Caique Manochio 01/09/2023
 #
 # Dependencies:  PLINK, ADMIXTURE, R
