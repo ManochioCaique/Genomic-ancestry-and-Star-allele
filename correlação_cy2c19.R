@@ -1,3 +1,25 @@
+#======================================================
+# Calculo de correlação entre frequencia e media de ancestralidade 
+#=======================================================
+#
+# (C) Copyright 2023, by LGH and Contributors.
+#
+# 
+#-----------------
+#  
+#-----------------
+#
+# Original Author: Caique Manochio
+# Contributor(s):  
+# Updated by (and date): Caique Manochio 04/09/2023
+#
+# Dependencies: R
+#
+# Command line:	
+
+
+
+
 library(readxl)
 
 media_k8 <- read_xlsx('ancestralidade_k8.xlsx', 
@@ -20,11 +42,11 @@ colunas <- c("EAS", "EUR", "AFR",
 valor_p <- list()
 valor_r <- list()
 
-# Loop para iterar sobre as frequências
+# Loop para  colocar frequencia em numerica 
 for (frequencia in alelos) {
   Freq_column <- as.numeric(Freq[[frequencia]])
   
-  # Loop para iterar sobre as colunas
+  
   for (coluna in colunas) {
     media_k8_column <- as.numeric(media_k8[[coluna]])
     

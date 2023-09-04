@@ -2,7 +2,7 @@
 # GRAFICO DE ANCESTRALIDADE K=8
 #==========================================
 #
-# (C) Copyright 2012, by LGH and Contributors.
+# (C) Copyright 2023, by LGH and Contributors.
 #
 # 
 #-----------------

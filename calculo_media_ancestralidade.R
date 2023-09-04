@@ -1,15 +1,37 @@
-freq <- read.table(choose.files())
+#======================================================
+# Calculo da media de ancestralidade por populaçao
+#=======================================================
+#
+# (C) Copyright 2023, by LGH and Contributors.
+#
+# 
+#-----------------
+#  ADMIXTURE
+#-----------------
+#
+# Original Author: Caique Manochio
+# Contributor(s):  
+# Updated by (and date): Caique Manochio 04/09/2023
+#
+# Dependencies:   ADMIXTURE, R
+#
+# Command line:	admixture arquivo.bed 8 -j5
+#			  				
+
+
+
+
+
+
+
+
 library(readxl)
 library(dplyr)
-k3 <- read_xlsx('ancestralidade_k8 (1).xlsx', 
-                sheet = 'ID_POP')
-vetor_pop <- k3$cod
-vetor_pop <- unique(vetor_pop)
-vetor_pop <- vetor_pop[-11]
+
 
 
 k8 <- read_xlsx('ancestralidade_k8.xlsx', 
-                sheet = 'ANCESTRALIDADE_K8') #Importando o arquivo porentagem individual de ancestralidade
+                sheet = 'ANCESTRALIDADE_K8') #Importando o arquivo porcentagem individual de ancestralidade
 
 tabela_resultados <- data.frame()
 lista_pop <- c ('LWK', 'ESN', 'YRI', 'MSL', 'GWD', 
