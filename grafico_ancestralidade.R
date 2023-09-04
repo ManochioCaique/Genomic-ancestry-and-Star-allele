@@ -1,3 +1,25 @@
+#==========================================
+# GRAFICO DE ANCESTRALIDADE K=8
+#==========================================
+#
+# (C) Copyright 2012, by LGH and Contributors.
+#
+# 
+#-----------------
+#  ADMIXTURE
+#-----------------
+#
+# Original Author: Fernanda Soares
+# Contributor(s): Wagner Magalhaes, Gilderlanio Araujo, Mateus Gouveia,  Caique Manochio 
+# Updated by (and date): Caique Manochio 01/09/2023
+#
+# Dependencies:  PLINK, ADMIXTURE, R
+#
+# Command line:	time nohup plink --bfile arquivo.bed --extract lista_snp.txt --make-bed --threads 10 --out snp_para_acestralidade
+#			  				admixture arquivo.bed 8 -j5
+
+
+
 library(readxl)
 
 dir()
@@ -24,7 +46,7 @@ nrow <- nrow(tbl2)
 nrow
 #plotando o gráfico 
 barplot(t(as.matrix(tbl2)), #matrix usada para criação do garafico
-        col = c("red1", "orange", 'greenyellow', "green",  
+        col = c("red1", "orange", 'hotpink', "green",  
                 "seagreen1", "deepskyblue2", "blue", 
                 "purple", 'white'), #cores usadas para colorir as anecestralidade
         space = 0, #controla os espaços entre cada barra
@@ -53,7 +75,7 @@ legend (3010, 0.9, #localização da legenda no gráfico
                                'NAT', 'SAS', 'EAS', 'EAS2' ), #legenda que vamos usar 
         text.font = 2, #tamanho da letra da legenda.
         fill = c("red1", "seagreen1", "purple", "deepskyblue2", 
-                "blue", 'greenyellow', "orange",  "green", 'white'), #cores usadas no gráfico e que representa a legenda
+                "blue", 'hotpink', "orange",  "green", 'white'), #cores usadas no gráfico e que representa a legenda
         bty = "n")# não deixa criar  um caixa envolta da legenda 
 
 
