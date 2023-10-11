@@ -1,3 +1,22 @@
+#==========================================
+# GRAFICO DE FREQUENCIA POR ANCESTRALIDADE 
+#==========================================
+#
+# (C) Copyright 2023, by LGH and Contributors.
+#
+# 
+#-----------------
+#  
+#-----------------
+#
+# Original Author: Caique Manochio
+# Contributor(s):  
+# Updated by (and date): Caique Manochio 01/09/2023
+#
+# Dependencies:  R
+#
+
+
 library(ggplot2)
 library(readxl)
 
