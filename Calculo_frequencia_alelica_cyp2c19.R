@@ -1,3 +1,24 @@
+#======================================================
+# Calculo da frequencia dos alelos em cada populaçao 
+#=======================================================
+#
+# (C) Copyright 2023, by GP-PGx-UFTM and Contributors.
+#
+# 
+#-----------------
+#  Stargazer 
+#-----------------
+#
+# Original Author: Caique Manochio
+# Contributor(s):  
+# Updated by (and date): Caique Manochio 24/10/2023
+#
+# Dependencies: R
+#
+# Command line:	time nohup python3 /home/Stargazer_v1.0.8/stargazer.py genotype -o nome_output -d tipo_de_dado -t nome_do_gene --vcf arquivo_com_variantes
+
+
+
 library(adegenet)
 library(dplyr)
 library(readxl)

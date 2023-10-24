@@ -2,7 +2,7 @@
 # Calculo de correlação entre frequencia e media de ancestralidade 
 #=======================================================
 #
-# (C) Copyright 2023, by LGH and Contributors.
+# (C) Copyright 2023, by GP-PGx-UFTM and Contributors.
 #
 # 
 #-----------------
@@ -17,9 +17,7 @@
 #
 # Command line:	
 
-
-
-
+library(dplyr)
 library(readxl)
 
 media_k8 <- read_xlsx('ancestralidade_k8.xlsx', 
@@ -38,9 +36,14 @@ colunas <- c("EAS", "EUR", "AFR",
              "NAT", "EUR2", "AFR2", 
              "EAS2", "SAS")
 
-# Vetores para armazenar os resultados
-valor_p <- list()
-valor_r <- list()
+#Dataframe vazio para armazenar os resultados 
+resultado_df <- data.frame(
+  Frequencia = character(),
+  Coluna = character(),
+  Valor_p = numeric(),
+  Valor_r = numeric(),
+  stringsAsFactors = FALSE
+)
 
 # Loop para  colocar frequencia em numerica 
 for (frequencia in alelos) {
@@ -54,9 +57,11 @@ for (frequencia in alelos) {
     cor_test_2 <- cor.test(Freq_column, media_k8_column, method = "pearson")
     
     # Armazena os resultados com o nome da coluna correspondente
-    nome_coluna <- paste("Cor", coluna, frequencia, sep = "_")
-    valor_p[[nome_coluna]] <- cor_test_2$p.value
-    valor_r[[nome_coluna]] <- cor_test_2$estimate
+    resultado_df <- rbind(resultado_df, data.frame(
+      Frequencia = frequencia,
+      Coluna = coluna,
+      Valor_p = cor_test_2$p.value,
+      Valor_r = cor_test_2$estimate))
   }
 }
    

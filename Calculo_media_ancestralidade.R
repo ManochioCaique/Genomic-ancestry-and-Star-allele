@@ -2,7 +2,7 @@
 # Calculo da media de ancestralidade por populaçao
 #=======================================================
 #
-# (C) Copyright 2023, by LGH and Contributors.
+# (C) Copyright 2023, by GP-PGx-UFTM and Contributors.
 #
 # 
 #-----------------
@@ -17,13 +17,6 @@
 #
 # Command line:	admixture arquivo.bed 8 -j5
 #			  				
-
-
-
-
-
-
-
 
 library(readxl)
 library(dplyr)
