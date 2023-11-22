@@ -1,0 +1,37 @@
+
+library(dplyr)
+library(rnaturalearth)
+library(ggplot2)
+library(sf)
+library(wbstats)
+library(rnaturalearthdata)
+
+
+coordenadasmundi <- read.delim(file.choose()) #arquivoo com as coordenadas 
+
+mapa_mundi <- ne_countries(scale = "medium", type = "map_units", returnclass = "sf") 
+
+paleta_pop <- c('#330000', '#660000', '#FB6A4A', '#FF0000', "#A50F15",
+                'navy', 'cyan', 'deepskyblue','royalblue1', '#08519C', 'cadetblue1',
+                'darkmagenta', 'mediumpurple1', 'mediumpurple4', 'mediumorchid1', 'blueviolet',
+                'chartreuse1',  'darkgreen',  'springgreen', '#31A354','olivedrab',
+                'chocolate', 'darkgoldenrod2', 'darkorange1', 'orange4', '#A63603')
+
+pop <- c('LWK', 'ESN', 'YRI', 'MSL', 'GWD', 
+         'ACB', 'ASW', 'CLM', 'MXL', 'PUR', 'PEL',
+         'TSI', 'IBS', 'GBR', 'CEU', 'FIN',
+         'PJL', 'GIH', 'ITU', 'STU', 'BEB',
+         'CDX', 'KHV', 'CHS', 'CHB', 'JPT')
+
+mapa1kgp <- ggplot() +
+  geom_sf(data = mapa_mundi)+
+  theme_light() +
+  geom_point(data = coordenadasmundi, aes(x = Population.longitude, y = Population.latitude, col = Population.code ), 
+             pch = 19, size = 10) +
+  labs(y = " ",
+       x = " ",
+       color = "População", 
+       title = " ")
+mapa1kgp + scale_color_manual(values = paleta_pop,
+                              breaks = pop) +
+  theme(legend.position = "right")
