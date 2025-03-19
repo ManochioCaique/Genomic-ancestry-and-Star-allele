@@ -1,10 +1,7 @@
+library(pacman)
+pacman::p_load( dplyr, readxl,
+                rnaturalearth, ggplot2, sf, wbstats, rnaturalearthdata, tibble )
 
-library(dplyr)
-library(rnaturalearth)
-library(ggplot2)
-library(sf)
-library(wbstats)
-library(rnaturalearthdata)
 
 
 coordenadasmundi <- read.delim(file.choose()) #arquivoo com as coordenadas 
